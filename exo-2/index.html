@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Exercices VueJS</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <section id="app">
+            <h1 v-if="animal === 'Dogs'">Dogs</h1>
+            <h1 v-else-if="animal === 'Cats'">Cats</h1>
+            <h1 v-else>Not Dogs or Cats</h1>
+            <button @click="toggleAnimal">Changer le titre</button>
+        </section>
+        <script type="module" src="assets/js/index.js"></script>
+    </body>
+</html>

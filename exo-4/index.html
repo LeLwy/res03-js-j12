@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Exercices VueJS</title>
+    </head>
+    <body>
+        <section id="app">  
+            <h2>To do list</h2>  
+            <ul>
+                <template v-for="task in tasks">         
+                    <li v-if="task.isDone === false">  
+                        {{ task.text }} 
+                        <button @click="removeTask(task)">Done</button>
+                    </li>          
+                    <li v-else-if="task.isDone === true" style="text-decoration-line: line-through;">  
+                        {{ task.text }} 
+                        <button @click="removeTask(task)">Done</button>
+                    </li>  
+                </template>
+            </ul>    
+            <form @submit.prevent="addTask">  
+                <fieldset>            
+                    <label for="task">Saisir une nouvelle tâche</label>  
+                    <input type="text" name="task" id="task" />  
+                </fieldset>        
+                <button type="submit">Ajouter</button>  
+            </form>
+        </section>
+        <script type="module" src="assets/js/index.js"></script>
+    </body>
+</html>
